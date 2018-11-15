@@ -1,0 +1,47 @@
+void Figure::show() {
+    _hide();
+    _showLine(2 * _radius, 0, -2 * _radius, 0); //horiz
+    _showLine(0, -2 * _radius, 0, 2 * _radius); //vertic
+    
+//diagonals
+    _showLine(1.55 * _radius, -1.55 * _radius, -1.55 * _radius, 1.55 * _radius);
+    _showLine(-1.55 * _radius, -1.55 * _radius, 1.55 * _radius, 1.55 * _radius);
+
+    GrCircle(_x0, _y0, _radius, GrBlack());
+    _showBoxes();
+    _showLeaves();
+}
+
+void Figure::_showBoxes() {
+    int k = 1; //знакочергування
+    for (int i = 0; i<2; i++) {
+// down/top
+        _showLine(0, 2 * k * _radius, 0.5 * _radius, 2.5 * k * _radius);
+        _showLine(0.5 * _radius, 2.5 * k * _radius, 0, 3 * k * _radius);
+        _showLine(0, 3 * k * _radius, -0.5 * _radius, 2.5 * k * _radius);
+        _showLine(-0.5 * _radius, 2.5 * k * _radius, 0, 2 * k * _radius);
+
+// right/left
+        _showLine(2 * k * _radius, 0, 2.5 * k * _radius, -0.5 * _radius);
+        _showLine(2.5 * k * _radius, -0.5 * _radius, 3 * k * _radius, 0);
+        _showLine(3 * k * _radius, 0, 2.5 * k * _radius, 0.5 * _radius);
+        _showLine(2.5 * k * _radius, 0.5 * _radius, 2 * k * _radius, 0);
+
+        k *= -1;
+    }
+}
+
+void Figure::_showLeaves() {
+//down left
+    _showArc(-2.25 * _radius, 2.25 * _radius, _radius, 0, 900);
+    _showArc(-1.25 * _radius, 1.25 * _radius, _radius, 1800, 2700);
+//top left
+    _showArc(-2.25 * _radius, -2.25 * _radius, _radius, 2700, 3600);
+    _showArc(-1.25 * _radius, -1.25 * _radius, _radius, 900, 1800);
+//down right
+    _showArc(2.25 * _radius, 2.25 * _radius, _radius, 900, 1800);
+    _showArc(1.25 * _radius, 1.25 * _radius, _radius, 2700, 3600);
+//top right
+    _showArc(2.25 * _radius, -2.25 * _radius, _radius, 1800, 2700);
+    _showArc(1.25 * _radius, -1.25 * _radius, _radius, 0, 900);
+}

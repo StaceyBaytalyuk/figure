@@ -1,0 +1,11 @@
+/*    _drawLine(0, 0, 2 * _radius, 0); // horizontal
+    _drawLine(0, 0, 1.55 * _radius, 1.55 * _radius); // diagonal
+
+//box
+    _drawLine(2 * _radius, 0, 2.5 * _radius, -0.5 * _radius);
+    _drawLine(2.5 * _radius, -0.5 * _radius, 3 * _radius, 0);
+    _drawLine(3 * _radius, 0, 2.5 * _radius, 0.5 * _radius);
+    _drawLine(2.5 * _radius, 0.5 * _radius, 2 * _radius, 0);
+
+    _drawArc(2.25 * _radius, 2.25 * _radius, _radius, 900, 1800);
+    _drawArc(1.25 * _radius, 1.25 * _radius, _radius, 2700, 3600);*/
