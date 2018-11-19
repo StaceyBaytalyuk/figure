@@ -39,10 +39,9 @@ void Figure::_initPoints() {
 void Figure::show() {
     _hide();
     _initPoints(); //чтобы фигура не рассыпалась при зуме
-    _draw();
-    for(int i=0; i<3; i++){
-        rotate(90);
+    for(int i=0; i<4; i++){
         _draw();
+        rotate(90);
     }
 }
 
