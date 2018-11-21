@@ -7,8 +7,7 @@ int main() {
     Figure figure(200, 200, 50);
     figure.show();
     while(true){
-        switch(GrKeyRead())
-        {
+        switch(GrKeyRead()) {
             case 'w': figure.move(0, -25); break;
             case 's': figure.move(0, 25); break;
             case 'd': figure.move(25, 0); break;
@@ -18,7 +17,7 @@ int main() {
             case 't': figure.zoom(2); break;
             case 'r': figure.zoom(0.5); break;
             case 'q': return 0;
-            default:break;
+            default: break;
         }
         figure.show();
     }

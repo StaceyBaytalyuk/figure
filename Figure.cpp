@@ -38,7 +38,6 @@ void Figure::_calculatePoints() {
     _point[4].x = x + _point[0].x;
     _point[4].y = y + _point[0].y;
 
-
     x = 2.5 * _radius * cos1 + 0.5 * _radius * sin1;
     y = 2.5 * _radius * sin1 - 0.5 * _radius * cos1;
     _point[5].x = x + _point[0].x;
@@ -64,7 +63,9 @@ void Figure::show() {
     }
 }
 
-void Figure::_hide() { GrClearContext(GrWhite()); }
+void Figure::_hide() {
+    GrClearContext(GrWhite());
+}
 
 void Figure::_draw() {
     GrCircle(_point[0].x, _point[0].y, _radius, GrBlack());
